@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show • ANAVITÓRIA — Esquinas</title>
+    <meta
+      name="description"
+      content="Convite estilo Spotify, inspirado no álbum Esquinas (ANAVITÓRIA), para levar a Lua ao show."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- CSS para a animação de corações -->
+    <style>
+      .heart-rain {
+        position: fixed; /* fixa no topo da página */
+        top: 0;
+        left: 0;
+        width: 100%; /* ocupa toda a largura */
+        height: 0;
+        pointer-events: none; /* não atrapalha cliques */
+        z-index: 9999; /* fica por cima de tudo */
+      }
+
+      .heart {
+        position: absolute;
+        top: -20px;
+        font-size: 24px;
+        animation: fall 3.4s linear forwards;
+        opacity: 0.9;
+      }
+
+      @keyframes fall {
+        to {
+          transform: translateY(100vh) rotate(20deg); /* cai até o fim da tela */
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <aside class="sidebar" aria-label="Navegação principal">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">♪</div>
+        <div class="brand-text">
+          <span class="brand-title">Lua & Thay</span>
+          <span class="brand-sub">♡</span>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-item active" href="#inicio" aria-current="page">Início</a>
+        <a class="nav-item" href="#album">Álbum</a>
+        <a class="nav-item" href="#convite">Convite</a>
+      </nav>
+
+      <div class="now-playing" aria-live="polite">
+        <div class="brand-mark" aria-hidden="true">♪</div>
+        <div class="np-info">
+          <div class="np-title">esquinas</div>
+          <div class="np-artist">anavitória</div>
+        </div>
+        <button
+          class="np-play"
+          id="mockPlay"
+          aria-pressed="false"
+          aria-label="Tocar / pausar demonstração"
+        >
+          ▶
+        </button>
+      </div>
+
+      <footer class="sidebar-footer">
+        <small>feito com ♡ por thay</small>
+      </footer>
+    </aside>
+
+    <main class="content">
+      <section id="inicio" class="section hero" tabindex="-1">
+        <div class="hero-bg"></div>
+        <div class="hero-card glass">
+          <h1>
+            Luana, quer viver <span class="accent">nas esquinas</span> comigo?
+          </h1>
+          <p class="lede">
+            Um convite com jeitinho de playlist — pra gente cantar abraçadas e
+            sorrir grande.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#convite">ver o convite</a>
+            <a class="btn ghost" href="#album">ver o álbum</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="album" class="section album">
+        <header class="section-header">
+          <h2>Álbum <span class="accent">Esquinas</span></h2>
+        </header>
+
+        <div class="album-grid">
+          <article class="album-card glass">
+            <div
+              class="cover gradient"
+              role="img"
+              aria-label="Capa do álbum reinterpretada"
+            ></div>
+            <div class="album-meta">
+              <h3>Esquinas</h3>
+              <p>Anavitória • 2025</p>
+            </div>
+            <div class="player">
+              <div class="progress" aria-hidden="true">
+                <span style="width: 36%"></span>
+              </div>
+              <div
+                class="controls"
+                role="group"
+                aria-label="controles de reprodução"
+              >
+                <button class="icon" aria-label="voltar 10s">⏮</button>
+                <button class="icon" aria-label="tocar/pausar">⏯</button>
+                <button class="icon" aria-label="avançar 10s">⏭</button>
+              </div>
+            </div>
+          </article>
+
+          <aside class="tracklist glass">
+            <h4>TER O CORAÇÃO NO CHÃO</h4>
+            <ol>
+              <li>
+                <span>
+                  Você me mostrou<br />
+                  Que o amor pode ser fácil<br />
+                  E eu desconfiei<br />
+                  Nunca tinha visto a paz<br />
+                  Tão perto do meu nariz<br /><br />
+                  Eu pensei que pra ser feliz<br />
+                  O chão precisava tremer<br />
+                  E a realidade parecer mentira<br />
+                  Que coisa boba!<br />
+                  Encontrei nas besteiras da rotina<br />
+                  A maior beleza<br /><br />
+                  Você me falou<br />
+                  O seu amor no meu ouvido<br />
+                  Sem pedir de volta<br />
+                  Uma resposta, garantia<br /><br />
+                  Ou coisa assim<br />
+                  Tão diferente de mim<br />
+                  Tão longe das explosões<br />
+                  Sem preocupar com os dias que virão<br /><br />
+                  Que coisa boa<br />
+                  Ter o coração no chão<br />
+                  E ter coragem pra dizer<br /><br />
+                  <strong>Eu te amo, eu te amo</strong> - thay
+                </span>
+              </li>
+            </ol>
+          </aside>
+        </div>
+      </section>
+
+      <section id="nos" class="section photos">
+        <header class="section-header">
+          <h2>nós <span class="accent">em fotos</span></h2>
+          <p>um pouco da gente — sorrisos, amor e saudade boa</p>
+        </header>
+
+        <div class="gallery" aria-label="galeria de fotos nossas">
+          <figure class="polaroid">
+            <img
+              src="assets/photos/IMG-20251009-WA0044.jpg"
+              alt="sorriso com brownie"
+              loading="lazy"
+            />
+            <figcaption>o sorriso que eu amo</figcaption>
+          </figure>
+          <figure class="polaroid">
+            <img
+              src="assets/photos/IMG-20251009-WA0045.jpg"
+              alt="noite no parque"
+              loading="lazy"
+            />
+            <figcaption>minha noite boa</figcaption>
+          </figure>
+          <figure class="polaroid">
+            <img
+              src="assets/photos/IMG-20251009-WA0046.jpg"
+              alt="abraço coladinho"
+              loading="lazy"
+            />
+            <figcaption>coladinhas</figcaption>
+          </figure>
+          <figure class="polaroid">
+            <img
+              src="assets/photos/IMG-20251009-WA0047.jpg"
+              alt="caretas fofas"
+              loading="lazy"
+            />
+            <figcaption>nossas caretas</figcaption>
+          </figure>
+          <figure class="polaroid">
+            <img
+              src="assets/photos/IMG-20251009-WA0048.jpg"
+              alt="brilho e rolê"
+              loading="lazy"
+            />
+            <figcaption>melhor brilho</figcaption>
+          </figure>
+          <figure class="polaroid">
+            <img
+              src="assets/photos/IMG-20251009-WA0049.jpg"
+              alt="dia de sol no jardim"
+              loading="lazy"
+            />
+            <figcaption>dia de sol</figcaption>
+          </figure>
+          <figure class="polaroid">
+            <img
+              src="assets/photos/IMG-20251009-WA0050.jpg"
+              alt="abraço no quintal"
+              loading="lazy"
+            />
+            <figcaption>abraço-quintal</figcaption>
+          </figure>
+          <figure class="polaroid">
+            <img
+              src="assets/photos/IMG-20251009-WA0051.jpg"
+              alt="olhar e carinho"
+              loading="lazy"
+            />
+            <figcaption>olhar e carinho</figcaption>
+          </figure>
+          <figure class="polaroid">
+            <img
+              src="assets/photos/IMG-20251009-WA0052.jpg"
+              alt="depois de meia hora pulando"
+              loading="lazy"
+            />
+            <figcaption>meia hora pulando</figcaption>
+          </figure>
+          <figure class="polaroid">
+            <img
+              src="assets/photos/IMG-20251009-WA0053.jpg"
+              alt="de costas sorrindo"
+              loading="lazy"
+            />
+            <figcaption>te seguindo feliz</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="convite" class="section invite">
+        <header class="section-header">
+          <h2>convite <span class="accent">pro show</span></h2>
+        </header>
+
+        <div class="invite-card glass">
+          <div class="invite-copy">
+            <p class="to">para: 🌙 <strong>Luana</strong></p>
+            <p class="message">
+              Eu quero você do meu lado nessa noite — a gente, de mãos dadas,
+              cantando baixinho e vivendo nas esquinas. aceita ir comigo?
+            </p>
+            <ul class="details" id="inviteDetails">
+              <li>
+                <strong>data</strong>: <span data-field="date">11/10/2025</span>
+              </li>
+              <li>
+                <strong>hora</strong>: <span data-field="time">21:00</span>
+              </li>
+              <li>
+                <strong>local</strong>: <span data-field="place">Vivo Rio</span>
+              </li>
+              <li>
+                <strong>cidade</strong>:
+                <span data-field="city">Rio de Janeiro, RJ</span>
+              </li>
+            </ul>
+
+            <div class="cta-row">
+              <button id="btnRSVP" class="btn primary">Aceito 💘</button>
+              <button id="btnCalendar" class="btn ghost">
+                Adicionar ao calendário
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="heartRain" class="heart-rain" aria-hidden="true"></div>
+      </section>
+
+      <footer class="site-footer">
+        <small>site pessoal • sem fins comerciais</small>
+      </footer>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <!-- JS: corações -->
+    <script>
+      function heartRain() {
+        const container = document.getElementById("heartRain");
+        const N = 18;
+        for (let i = 0; i < N; i++) {
+          const span = document.createElement("span");
+          span.className = "heart";
+          span.textContent = Math.random() > 0.4 ? "💖" : "🧡";
+          span.style.left = Math.random() * 88 + "%";
+          span.style.animationDuration = 2.8 + Math.random() * 1.6 + "s";
+          container.appendChild(span);
+          setTimeout(() => span.remove(), 3600);
+        }
+      }
+
+      document.getElementById("btnRSVP").addEventListener("click", () => {
+        heartRain();
+      });
+    </script>
+
+    <!-- Música de fundo -->
+    <audio id="anavitória" preload="auto">
+      <source
+        src="assets/ANAVITÓRIA - Ter o coração no chão - ANAVITÓRIA (youtube).mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+
+    <!-- JS: tocar/pausar (sidebar ▶ / ⏸ e botão ⏯ do álbum) -->
+    <script>
+      // Pega o áudio (aceita 'anavitória' ou 'bgm' se você trocar o id)
+      const musica =
+        document.getElementById("anavitória") || document.getElementById("bgm");
+
+      // Botões que vão controlar o áudio
+      const btnSidebar = document.getElementById("mockPlay");
+      const btnAlbum = document.querySelector(
+        '.controls .icon[aria-label="tocar/pausar"]'
+      );
+
+      // Volume inicial
+      if (musica) musica.volume = 6;
+
+      function setIcon(isPlaying) {
+        [btnSidebar, btnAlbum].forEach((btn) => {
+          if (!btn) return;
+          btn.textContent = isPlaying ? "⏸" : "▶";
+          btn.setAttribute("aria-pressed", isPlaying ? "true" : "false");
+        });
+      }
+
+      async function togglePlay() {
+        if (!musica) return;
+        if (musica.paused) {
+          try {
+            await musica.play();
+            setIcon(true);
+          } catch (err) {
+            console.warn("Reprodução bloqueada até interação do usuário:", err);
+          }
+        } else {
+          musica.pause();
+          setIcon(false);
+        }
+      }
+
+      // Liga os cliques
+      btnSidebar && btnSidebar.addEventListener("click", togglePlay);
+      btnAlbum && btnAlbum.addEventListener("click", togglePlay);
+    </script>
+  </body>
+</html>
